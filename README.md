@@ -29,3 +29,42 @@ The LinkedIn Profile Scraper is a Chrome extension that extracts information fro
 2. Open Google Chrome and go to `chrome://extensions/`.
 3. Enable Developer mode by toggling the switch in the upper-right corner.
 4. Click on the "Load unpacked" button and select the directory where you cloned or downloaded this repository.
+
+## Setup Database
+
+1. Install MySQL on your local machine if you haven't already. Follow the [MySQL installation guide](https://dev.mysql.com/doc/refman/8.0/en/installing.html) for your platform.
+2. Create a new database for the scraper:
+   ```sql
+   CREATE DATABASE linkedin_scraper;
+   ```
+3. Use the following SQL commands to create the `profiles` table:
+  ```sql
+   CREATE TABLE profiles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    about TEXT,
+    bio TEXT,
+    location VARCHAR(255),
+    connectionCount INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+  ```
+4. cd to the backend 
+
+5. Install the required Node.js dependencies:
+   ```
+    npm install express sequelize mysql2 cors body-parser
+   ```
+6. Start your Node.js server:
+   ```js 
+    node.js run server
+   ``` 
+## Demo
+
+This image demonstrates how the scraped data appears in the MySQL database after being submitted from the Chrome extension.
+
+![Demo of Data Inserted in Database](demo.png)
+
+
+
