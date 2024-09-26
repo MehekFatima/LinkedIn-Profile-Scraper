@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     pickTitleBtn.addEventListener('click', function() {
         const profileLinks = [
-            'https://in.linkedin.com/in/aaminah-masarrath-63b623271',
             'https://www.linkedin.com/in/mehek-fatima/', 
-            'https://in.linkedin.com/in/muskaan-fatima-847503261',  
+      
         ];
         
         profileLinks.forEach(link => {
